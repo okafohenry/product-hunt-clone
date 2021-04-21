@@ -1,0 +1,15 @@
+li.prod-title > h5{
+    margin: 0;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    font-size: 15px;
+    text-transform: capitalize;
+}
+li.prod-title{
+    background: #bbbbbb2d;
+}
+
+li.prod-desc > p{
+    display: block;
+    background: #bbbbbb2d;
+}
