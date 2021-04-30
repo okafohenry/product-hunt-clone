@@ -4,9 +4,15 @@ interface Reviews{
 }
 
 export interface Products{
-    id: string;
-    img: string;
+    id?: string;
+    img: string | null;
     title: string;
     desc: string;
     review: Reviews[];  
 }
+
+export interface State{
+    pending: boolean;
+    products: Products[];
+    error: null | string;
+} 

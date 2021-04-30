@@ -1,7 +1,7 @@
 import React from 'react';
 import {IndexPage} from './pages'
 
-function App() {
+const App= () => {
   return (
     <div className="App">
         <IndexPage />
