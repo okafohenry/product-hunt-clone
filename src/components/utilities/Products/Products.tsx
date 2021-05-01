@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import styled from 'styled-components';
 import { Grid} from '@material-ui/core';
 import './Products.css';
+import { DefaultRootState, useSelector } from 'react-redux';
 
 
 const Wrapper = styled.div` 
@@ -23,20 +24,13 @@ const Wrapper = styled.div`
     }
 
     
-
-    
-    
+   
 `
 
-interface Products{
-    image: string;
-    title: string;
-    description: string;
-    //date?: string;
-}
 
-export const Products: React.FC<Products> = ({image, title, description}) => {
-    const [products, setProducts] = useState([]);
+export const Products: React.FC<any[]> = () => {    
+    const products = useSelector((state) => state["products"]); 
+    console.log("Products", products);
 
     return(
         <Wrapper>
@@ -52,7 +46,11 @@ export const Products: React.FC<Products> = ({image, title, description}) => {
                                 <h5>{product.title}</h5>
                             </li>
                             <li className="prod-desc">
-                                <p>{product.desc}</p>
+                                <p>
+                                {/*truncate string: return first 200 characters and add an ellipsis*/
+                                product.desc.substring(0, 200).concat("...")
+                                }
+                                </p>
                             </li>
                         </Grid>
                     </Grid>

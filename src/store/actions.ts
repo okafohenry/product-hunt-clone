@@ -1,39 +1,30 @@
-import { Products } from './types';
-
-export const  FETCH_PRODUCTS_PENDING = 'FETCH_PRODUCTS_PENDING';
-export const  FETCH_PRODUCTS_SUCCESS = 'FETCH_PRODUCTS_SUCCESS';
-export const  FETCH_PRODUCTS_ERROR = 'FETCH_PRODUCTS_ERROR';
-export const  ADD_PRODUCT = 'ADD_PRODUCT';
-
-interface ReduxAction<T, P = any>{
-    type: T;
-    payload?: P;
-}
+import { Products,ReduxAction, ActionNames } from './types';
 
 
-const fetchProductsPending = (): ReduxAction<typeof FETCH_PRODUCTS_PENDING> => {
+
+const fetchProductsPending = (): ReduxAction<typeof ActionNames.FETCH_PRODUCTS_PENDING> => {
     return{
-        type: FETCH_PRODUCTS_PENDING
+        type: ActionNames.FETCH_PRODUCTS_PENDING
     }
 }
 
-const fetchProductsSuccess = (products: Products): ReduxAction<typeof FETCH_PRODUCTS_SUCCESS, Products> => {
+const fetchProductsSuccess = (products: Products): ReduxAction<typeof ActionNames.FETCH_PRODUCTS_SUCCESS, Products> => {
     return{
-        type: FETCH_PRODUCTS_SUCCESS,
+        type: ActionNames.FETCH_PRODUCTS_SUCCESS,
         payload: products
     }
 }
 
-const fetchProductsError = (error: string): ReduxAction<typeof FETCH_PRODUCTS_ERROR, string> => {
+const fetchProductsError = (error: string): ReduxAction<typeof ActionNames.FETCH_PRODUCTS_ERROR, string> => {
     return{
-        type: FETCH_PRODUCTS_ERROR,
+        type: ActionNames.FETCH_PRODUCTS_ERROR,
         payload: error
     }
 }
 
-const addProduct = (product: Products): ReduxAction<typeof ADD_PRODUCT, Products> => {
+const addProduct = (product: Products): ReduxAction<typeof ActionNames.ADD_PRODUCT, Products> => {
     return{
-        type: ADD_PRODUCT,
+        type: ActionNames.ADD_PRODUCT,
         payload: product
     }
 }

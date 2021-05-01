@@ -4,11 +4,11 @@ import './assets/css/index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {createStore} from 'redux';
-import {allReducers} from './store';
+import {reducer} from './store';
 import {Provider} from 'react-redux';
 //import {composeWithDevTools} from 'redux-devtools';
 
-const store = createStore(allReducers);
+const store = createStore(reducer);
 
 ReactDOM.render(
   <React.StrictMode>

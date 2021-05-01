@@ -1,5 +1,4 @@
-import {FETCH_PRODUCTS_PENDING, FETCH_PRODUCTS_SUCCESS, FETCH_PRODUCTS_ERROR, ADD_PRODUCT} from './actions';
-import { State } from './types';
+import {State, ActionNames, ReduxAction} from './types';
 
 const initialState: State = {
     pending: false,
@@ -168,16 +167,16 @@ const initialState: State = {
     error: null
 }
 
-export const fetchProductReducer = (state = initialState, action) => {
+ export const reducer = (state = initialState, action: ReduxAction<ActionNames> ) => {
     switch(action.type){
-        case FETCH_PRODUCTS_PENDING: { 
+        case ActionNames.FETCH_PRODUCTS_PENDING: { 
             return{
                 ...state,
                 pending: true
             }
         }
 
-        case FETCH_PRODUCTS_SUCCESS: {
+        case ActionNames.FETCH_PRODUCTS_SUCCESS: {
             return{
                 ...state,
                 pending: false,
@@ -185,27 +184,29 @@ export const fetchProductReducer = (state = initialState, action) => {
             }
         }
 
-        case FETCH_PRODUCTS_ERROR: {
+        case ActionNames.FETCH_PRODUCTS_ERROR: {
             return{
                 ...state,
                 pending: false,
-                error: action.error
+                error: action.payload
             }
         }
+/*
+        case ActionNames.ADD_PRODUCT: {
+            return{
+                
+            }
+        }
+*/
 
         default:
             return state;
     }
 }
 
+//export default reducer;
 
-const addProductReducer = (state=initialState, action) => {
-    switch(action.type){
-        case ADD_PRODUCT:
-            return{
 
-            }
-    }
-}
 
-//Add selectors here                                                          
+
+                                                      
