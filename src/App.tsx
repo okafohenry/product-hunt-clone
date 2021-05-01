@@ -1,10 +1,14 @@
 import React from 'react';
-import {IndexPage} from './pages'
+import {IndexPage, ProductReview} from './pages'
+import {Switch, Route} from 'react-router-dom';
 
 const App= () => {
   return (
     <div className="App">
-        <IndexPage />
+      <Switch>
+        <Route path='/' exact component={IndexPage} />
+        <Route path='/:product_title' component={ProductReview} />
+      </Switch>
     </div>
   );
 }

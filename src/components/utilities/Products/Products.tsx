@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Grid} from '@material-ui/core';
 import './Products.css';
 import { DefaultRootState, useSelector } from 'react-redux';
+import {Link} from 'react-router-dom';
 
 
 const Wrapper = styled.div` 
@@ -23,8 +24,6 @@ const Wrapper = styled.div`
         height: 110px;
     }
 
-    
-   
 `
 
 
@@ -37,6 +36,7 @@ export const Products: React.FC<any[]> = () => {
             <h3 className="display-prod-text">Display Products</h3>
             <ul>
                 { products.map(product => ( 
+                <Link to={`/${product.title}`}>
                     <Grid container justify="space-between" className="product">    
                         <Grid item xs={12} sm={3} className="img-container">
                             <li className="prod-image">{product.image}</li>
@@ -53,7 +53,8 @@ export const Products: React.FC<any[]> = () => {
                                 </p>
                             </li>
                         </Grid>
-                    </Grid>
+                    </Grid>        
+                </Link>
                 ))}
             </ul>
         </Wrapper>
