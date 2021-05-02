@@ -13,3 +13,7 @@ li.prod-desc > p{
     display: block;
     background: #bbbbbb2d;
 }
+a{
+    text-decoration: none;
+    color: #000;
+} 

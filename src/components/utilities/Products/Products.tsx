@@ -36,7 +36,7 @@ export const Products: React.FC<any[]> = () => {
             <h3 className="display-prod-text">Display Products</h3>
             <ul>
                 { products.map(product => ( 
-                <Link to={`/${product.title}`}>
+                <Link to={`/${product.id}`}>
                     <Grid container justify="space-between" className="product">    
                         <Grid item xs={12} sm={3} className="img-container">
                             <li className="prod-image">{product.image}</li>

@@ -7,7 +7,7 @@ const App= () => {
     <div className="App">
       <Switch>
         <Route path='/' exact component={IndexPage} />
-        <Route path='/:product_title' component={ProductReview} />
+        <Route path='/:product_id' component={ProductReview} />
       </Switch>
     </div>
   );
