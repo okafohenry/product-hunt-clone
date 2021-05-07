@@ -1,2 +1,2 @@
 export * from './IndexPage/IndexPage';
-export * from './ProductReviewPage/ProductReview';
+export * from './ProductReview/ProductReview';

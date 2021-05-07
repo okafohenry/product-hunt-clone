@@ -62,7 +62,7 @@ export const AddProducts = () => {
                 className="btn-add"
                 fullWidth
                 variant="contained" 
-                size="medium">
+                size="medium" >
                 Add Products
             </Button>
         </Wrapper>

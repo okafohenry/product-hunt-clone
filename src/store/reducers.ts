@@ -191,13 +191,22 @@ const initialState: State = {
                 error: action.payload
             }
         }
-/*
+
         case ActionNames.ADD_PRODUCT: {
             return{
-                
+               ...state,
+               products: [...state.products, action.payload] 
             }
         }
-*/
+        /*
+            add reviews to state.products[i].reviews
+        case ActionNames.ADD_PRODUCT_REVIEW: {
+            return{
+                ...state,
+                products: [...state.products, ]
+            }
+        }
+        */
 
         default:
             return state;

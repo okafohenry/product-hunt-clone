@@ -1,4 +1,4 @@
-import { Products,ReduxAction, ActionNames } from './types';
+import { Products,Reviews, ReduxAction, ActionNames } from './types';
 
 
 
@@ -26,5 +26,12 @@ const addProduct = (product: Products): ReduxAction<typeof ActionNames.ADD_PRODU
     return{
         type: ActionNames.ADD_PRODUCT,
         payload: product
+    }
+}
+
+const addProductReview = (review: Reviews): ReduxAction<typeof ActionNames.ADD_PRODUCT_REVIEW, Reviews> => {
+    return{ 
+        type: ActionNames.ADD_PRODUCT_REVIEW,
+        payload: review
     }
 }

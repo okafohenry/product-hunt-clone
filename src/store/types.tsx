@@ -1,4 +1,4 @@
-interface Reviews{
+export interface Reviews{
     date?: string;
     txt: string;
 }

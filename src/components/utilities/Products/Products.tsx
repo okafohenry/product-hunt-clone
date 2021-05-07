@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import styled from 'styled-components';
 import { Grid} from '@material-ui/core';
 import './Products.css';
-import { DefaultRootState, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import {Link} from 'react-router-dom';
 
 
@@ -27,16 +27,16 @@ const Wrapper = styled.div`
 `
 
 
-export const Products: React.FC<any[]> = () => {    
+export const Products: React.FC = () => {    
     const products = useSelector((state) => state["products"]); 
-    console.log("Products", products);
+    //console.log("Products", products);
 
     return(
         <Wrapper>
             <h3 className="display-prod-text">Display Products</h3>
             <ul>
                 { products.map(product => ( 
-                <Link to={`/${product.id}`}>
+                <Link to={`/products/${product.id}`}>
                     <Grid container justify="space-between" className="product">    
                         <Grid item xs={12} sm={3} className="img-container">
                             <li className="prod-image">{product.image}</li>
